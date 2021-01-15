@@ -11,54 +11,71 @@
         android:id="@+id/MemeImageView"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:background="@color/ImageviewColour"
         app:layout_constraintBottom_toBottomOf="@id/NextButton"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:background="@color/ImageviewColour"
-        tools:srcCompat="@tools:sample/avatars"
-        />
+        tools:srcCompat="@tools:sample/avatars" />
 
-
-
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/BackButton"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/NextButton"
+        android:padding="30dp"
+        android:background="@color/colorAccent"
+        android:text="@string/back"
+        android:onClick="GoingBack"/>
     <Button
         android:id="@+id/ShareButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:background="@color/ShareButtonColour"
+        android:onClick="sharememe"
         android:padding="30dp"
         android:text="@string/share"
-        android:background="@color/ShareButtonColour"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@id/guideline"
-        android:onClick="sharememe"/>
+        app:layout_constraintRight_toLeftOf="@id/guideline" />
 
     <Button
         android:id="@+id/NextButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:background="@color/NextButtonColour"
+        android:onClick="nextmeme"
         android:padding="30dp"
         android:text="@string/next"
-        android:background="@color/NextButtonColour"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toRightOf="@id/guideline"
-        android:onClick="nextmeme"/>
+        app:layout_constraintRight_toLeftOf="@id/guideline2" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.5" />
+        app:layout_constraintGuide_percent="0.33" />
+
     <ProgressBar
         android:id="@+id/Progress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/MemeImageView"
         app:layout_constraintLeft_toLeftOf="@id/MemeImageView"
         app:layout_constraintRight_toRightOf="@id/MemeImageView"
-        app:layout_constraintTop_toTopOf="@id/MemeImageView"
-        app:layout_constraintBottom_toBottomOf="@id/MemeImageView"/>
+        app:layout_constraintTop_toTopOf="@id/MemeImageView" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.66"
+        />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

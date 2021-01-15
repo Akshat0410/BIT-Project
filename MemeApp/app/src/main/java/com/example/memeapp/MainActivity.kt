@@ -1,11 +1,13 @@
 package com.example.memeapp
 
+import android.content.DialogInterface
 import android.content.Intent
 import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.view.View
-import android.widget.ProgressBar
+import android.widget.Button
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.android.volley.Request
 import com.android.volley.Response
@@ -18,16 +20,16 @@ import com.bumptech.glide.request.RequestListener
 import com.bumptech.glide.request.target.Target
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity() {
 
+class MainActivity : AppCompatActivity() {
+    var closeButton: Button? = null
+    var builder: AlertDialog.Builder? = null
     var currentImageUrl:String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+                  BackButton    }
 
-        loadmeme()
-    }
+
     private fun loadmeme(){
         // Instantiate the RequestQueue.
         val queue = Volley.newRequestQueue(this)  //Passing the context that we pass this
@@ -88,7 +90,18 @@ class MainActivity : AppCompatActivity() {
     fun nextmeme(view: View) {
 
           loadmeme()
-
-
     }
+
+    fun GoingBack(view: View) {
+        builder.setMessage(R.string.dialog_message) .setTitle(R.string.dialog_title)
+        builder.setMessage("Do you want to close this application ?")
+            .setCancelable(false)
+            .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int id) {
+                    finish();
+                    Toast.makeText(getApplicationContext(),"you choose yes action for alertbox",
+                        Toast.LENGTH_SHORT).show();
+                }
+
+            }
 }
