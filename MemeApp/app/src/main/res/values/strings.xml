@@ -1,8 +1,0 @@
-<resources>
-    <string name="app_name">Meme App</string>
-    <string name="next">Next</string>
-    <string name="share">Share</string>
-    <string name="back">Back</string>
-    <string name="dialog_message" />
-    <string name="dialog_title" />
-</resources>
